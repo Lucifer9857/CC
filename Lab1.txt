@@ -1,0 +1,27 @@
+code:
+    likes(ram, mango).
+    girl(seema).
+    like(bill, candy).
+    real(rose).
+    own(john, gold).
+
+query:
+    likes(ram, mango).
+    likes(ram, What).
+    likes(Who, What).
+    girl(Who).
+
+
+code 2:
+    c_to_f(C, F) :- F is (C * 9 / 5) + 32.
+    freezing(F):-F =< 32 .
+
+query:
+    ?- c_to_f(100, X).
+    X = 212.
+    ?- c_to_f(33, A).
+    A = 91.4.
+    ?- freezing(31).
+    true.
+    ?- freezing(33).
+    false.

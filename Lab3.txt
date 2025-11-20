@@ -1,0 +1,20 @@
+Code:
+    dfs(Start , Goal , Path):-
+        dfs_helper(Start , Goal , [Start] , Path).
+    dfs_helper(Goal , Goal , Path , Path).
+    dfs_helper(Start , Goal , Visited ,Path):-
+        edge(Start , Next),
+        \+ member(Next , Visited ),
+        dfs_helper(Next , Goal , [Next | Visited ] , Path).
+    edge(a, b).
+    edge(a, c).
+    edge(b, e).
+    edge(c ,f).
+    edge(d ,g).
+    edge(e ,g).
+    edge(f ,h).
+
+Query:
+
+    ?- dfs(a, b, Path).
+
